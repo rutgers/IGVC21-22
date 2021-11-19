@@ -1,0 +1,8 @@
+prefix=/home/ieee/IGVC21-22/catkin_ws/install
+
+Name: urdf_testing
+Description: Description of urdf_testing
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

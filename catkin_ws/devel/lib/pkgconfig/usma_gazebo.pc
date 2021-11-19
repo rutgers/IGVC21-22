@@ -1,0 +1,8 @@
+prefix=/home/ieee/IGVC21-22/catkin_ws/devel
+
+Name: usma_gazebo
+Description: Description of usma_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

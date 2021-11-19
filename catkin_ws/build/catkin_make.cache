@@ -1,0 +1,2 @@
+urdf_testing
+-DCATKIN_DEVEL_PREFIX=/home/ieee/IGVC21-22/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ieee/IGVC21-22/catkin_ws/install -G Unix Makefiles

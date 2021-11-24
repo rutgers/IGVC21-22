@@ -1,5 +1,5 @@
-# C5-E-Controller-API
- python scripts for setting values in the C5-E motor controller, and interfacting with HIDs
+# C5-E-Controller-API and control handling
+ python scripts for setting values in the C5-E motor controller, and interacting with HIDs
 
 not meant to be a comprehensive api, planning on implementing things as needed
 

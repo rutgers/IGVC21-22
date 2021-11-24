@@ -1,7 +1,5 @@
 import hid
 import time
-import struct
-import binascii
 
 class ControllerReader():
 

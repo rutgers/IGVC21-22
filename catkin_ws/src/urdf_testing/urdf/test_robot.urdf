@@ -1,10 +1,150 @@
 <?xml version="1.0"?>
 <robot name="myfirst">
+
   <link name="base_link">
     <visual>
       <geometry>
-        <cylinder length="0.6" radius="0.2"/>
+        <box size = "0.4878 0.8382 0.0381"/>
       </geometry>
     </visual>
+    <collision>
+        <geometry>
+        <box size = "0.4878 0.8382 0.0381"/>    
+        </geometry>
+    </collision>
   </link>
+
+  <link name="link_rotate1">
+    <visual>
+      <geometry>
+        <box size = "0.4878 0.8382 0.0381"/>
+      </geometry>
+      <origin rpy = "0 0 2.094"/>
+    </visual>
+    <collision>
+        <geometry>
+        <box size = "0.4878 0.8382 0.0381"/>    
+        </geometry>
+    </collision>
+  </link>
+
+  <link name="link_rotate2">
+    <visual>
+      <geometry>
+        <box size = "0.4878 0.8382 0.0381"/>
+      </geometry>
+      <origin rpy = "0 0 -2.094"/>
+    </visual>
+    <collision>
+        <geometry>
+        <box size = "0.4878 0.8382 0.0381"/>    
+        </geometry>
+    </collision>
+  </link>
+
+  <joint name = "base_to_rotate_1" type = "fixed">
+    <parent link = "base_link"/>
+    <child link = "link_rotate1"/>
+    <origin xyz = "0 0 0"/>
+  </joint>
+
+  <joint name = "base_to_rotate_2" type = "fixed">
+    <parent link = "base_link"/>
+    <child link = "link_rotate2"/>
+    <origin xyz = "0 0 0"/>
+  </joint>
+
+  <link name ="wheel_left">
+    <visual>
+        <geometry>
+            <cylinder radius = "0.127" length = "0.0889"/>
+        </geometry>
+        <origin xyz = "0 -0.3175 0" rpy = "1.5708 0 0"/>
+    </visual>
+    <collision>
+    <geometry>
+            <cylinder radius = "0.127" length = "0.0889"/>
+        </geometry>
+    </collision>
+  </link>
+
+    <link name ="wheel_right">
+    <visual>
+        <geometry>
+            <cylinder radius = "0.127" length = "0.0889"/>
+        </geometry>
+        <origin xyz = "0 0.3175 0" rpy = "1.5708 0 0"/>
+    </visual>
+    <collision>
+        <geometry>
+            <cylinder radius = "0.127" length = "0.0889"/>
+        </geometry>
+    </collision>
+  </link>
+
+
+  <link name ="c_front">
+    <visual>
+        <geometry>
+            <sphere radius = "0.127"/>
+        </geometry>
+        <origin xyz = "0.3175 0 0" rpy = "1.5708 0 0"/>
+    </visual>
+    <collision>
+    <geometry>
+            <sphere radius = "0.127"/>
+        </geometry>
+    </collision>
+  </link>
+
+  <link name ="c_back">
+    <visual>
+        <geometry>
+            <sphere radius = "0.127"/>
+        </geometry>
+        <origin xyz = "-0.3175 0 0" rpy = "1.5708 0 0"/>
+    </visual>
+    <collision>
+        <geometry>
+            <sphere radius = "0.127"/>
+        </geometry>
+    </collision>  
+  </link>
+
+<joint name = "joint_c_front" type = "fixed">
+  <parent link = "base_link"/>
+  <child link = "c_front"/>
+  <origin xyz = "0 0 0"/>
+</joint>
+
+<joint name = "joint_c_back" type = "fixed">
+  <parent link = "base_link"/>
+  <child link = "c_back"/>
+  <origin xyz = "0 0 0"/>
+</joint>
+
+<joint name = "w_left" type = "continuous">
+    <parent link = "base_link"/>
+    <child link = "wheel_left"/>
+    <origin xyz = "0 0 -0.0254"/>
+    <axis xyz = "0 1 0"/>
+</joint>
+
+<joint name = "w_right" type = "continuous">
+    <parent link = "base_link"/>
+    <child link = "wheel_right"/>
+    <origin xyz = "0 0 -0.0254"/>
+    <axis xyz = "0 1 0"/>
+</joint>
+
+
+<gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace>/</robotNamespace>
+  </plugin>
+</gazebo>
+
 </robot>
+
+
+

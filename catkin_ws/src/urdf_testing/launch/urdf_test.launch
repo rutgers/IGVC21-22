@@ -1,5 +1,5 @@
 <launch>
     <include file="$(find urdf_tutorial)/launch/display.launch">
-        <arg name="model" value="$(find urdf_testing)/urdf/test_robot.urdf" />
+        <arg name="model" value="$(find urdf_testing)/urdf/test_robot.urdf.xacro" />
     </include>
 </launch>

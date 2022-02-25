@@ -8,8 +8,6 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/ieee/IGVC21-22/catkin_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/ieee/IGVC21-22/catkin_ws/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/ieee/IGVC21-22/catkin_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/ieee/IGVC21-22/catkin_ws/build'
 export ROSLISP_PACKAGE_DIRECTORIES="/home/ieee/IGVC21-22/catkin_ws/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/ieee/IGVC21-22/catkin_ws/src:$ROS_PACKAGE_PATH"

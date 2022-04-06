@@ -2,7 +2,7 @@ from scipy.interpolate import interp1d
 import controllerInputs
 import time
 
-maxSpeed = 300 # find whatever the max speed of the motor is
+maxSpeed = 40 # find whatever the max speed of the motor is
 deadzone = 30 #maybe add ability for 2 seperate deadzones
 
 mapHigh = interp1d([(255/2)+deadzone,255], [0, maxSpeed])
@@ -25,7 +25,8 @@ def mapControllsTwoStick(values):
     else:
         output['rightMotorTargetSpeed'] = 0        
 
-    print(output)
+    #print(output)
+    return output
 
 def mapControllsTank(values):
     return
@@ -44,7 +45,8 @@ if(__name__ == "__main__"):
 #    vals={'firstY': 127}
 #    mapControllsTwoStick(vals)
 
-    myDeviceName = "Controller (XBOX 360 For Windows)"
+    #myDeviceName = "Controller (XBOX 360 For Windows)"
+    myDeviceName = "Mayflash WiiU Pro Game Controller Adapter"
     myReader = controllerInputs.ControllerReader()
     myReader.openController(myDeviceName)
 

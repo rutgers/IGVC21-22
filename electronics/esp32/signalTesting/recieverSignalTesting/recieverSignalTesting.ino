@@ -28,12 +28,14 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   unsigned long currentTime = millis();
   boolean recievedPacket = true;
 
-  if ((currentTime - timeOfLastPacket) > (1000/expectedRate*1.1)) {
-    totalMissed += 1;
+  double elapsedTime = currentTime-timeOfLastPacket;
+
+  if (elapsedTime > (1000/expectedRate*1.1)) {
+    totalMissed += round(int(round(elapsedTime/1000))%int(round(1000/expectedRate/1000)));
   }
 
   Serial.print("Time since last packet:  ");
-  Serial.println(currentTime-timeOfLastPacket);
+  Serial.println(elapsedTime);
   Serial.print("Total packets missed:  ");
   Serial.println(totalMissed);
   Serial.println("");

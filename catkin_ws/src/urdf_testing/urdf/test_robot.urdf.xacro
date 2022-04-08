@@ -103,17 +103,17 @@
   </link>
 
   <link name ="c_front">
-    <visual>
+    <!-- <visual>
         <geometry>
             <cylinder radius = "0.127" length = "0.0889"/>
         </geometry>
-        <origin xyz = "0.3175 0 0" rpy = "1.5708 0 0"/>
+        <origin xyz = "0.0 0 0" rpy = "1.5708 0 0"/>      
     </visual>
     <collision>
     <geometry>
             <cylinder radius = "0.127" length = "0.0889"/>
         </geometry>
-    </collision>
+    </collision> -->
     <inertial>
       <mass value="10"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
@@ -121,17 +121,17 @@
   </link>
 
   <link name ="c_back">
-    <visual>
+    <!-- <visual>
         <geometry>
             <cylinder radius = "0.127" length = "0.0889"/>
         </geometry>
-        <origin xyz = "-0.3175 0 0" rpy = "1.5708 0 0"/>
+        <origin xyz = "0 0 0" rpy = "1.5708 0 0"/>
     </visual>
     <collision>
         <geometry>
             <cylinder radius = "0.127" length = "0.0889"/>
         </geometry>
-    </collision>  
+    </collision>   -->
     <inertial>
       <mass value="10"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
@@ -143,7 +143,7 @@
         <geometry>
             <cylinder radius = "0.127" length = "0.0889"/>
         </geometry>
-        <origin xyz = "0.3175 0 0" rpy = "1.5708 0 0"/>
+        <origin xyz = "0 0 0" rpy = "1.5708 0 0"/>
     </visual>
     <collision>
     <geometry>
@@ -161,7 +161,7 @@
         <geometry>
             <cylinder radius = "0.127" length = "0.0889"/>
         </geometry>
-        <origin xyz = "-0.3175 0 0" rpy = "1.5708 0 0"/>
+        <origin xyz = "0 0 0" rpy = "1.5708 0 0"/>
     </visual>
     <collision>
         <geometry>
@@ -174,29 +174,81 @@
     </inertial>
   </link>
 
-<joint name = "joint_c_front" type = "continuous">
+<link name ="c_connect_front">
+    <visual>
+        <geometry>
+            <cylinder radius = "0.0" length = "0.0"/>
+        </geometry>
+        <origin xyz = "0.0 0 0" rpy = "1.5708 0 0"/>      
+    </visual>
+    <collision>
+    <geometry>
+            <cylinder radius = "0" length = "0"/>
+        </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+  </link>
+
+<joint name = "connect_c_front_joint" type = "fixed">
   <parent link = "base_link"/>
-  <child link = "c_front"/>
-  <origin xyz = "0 0 0"/>
+  <child link = "c_connect_front"/>
+  <origin xyz = "0.3175 0 -0.0254"/>
 </joint>
 
-<joint name = "joint_c_back" type = "continuous">
-  <parent link = "base_link"/>
-  <child link = "c_back"/>
-  <origin xyz = "-0.05 0 0"/>
+<joint name = "joint_c_front" type = "continuous">
+  <parent link = "c_connect_front"/>
+  <child link = "c_front"/>
+  <origin xyz = "0.0 0 0"/>
+  <axis xyz = "0 1 0"/>
 </joint>
+
+ <link name ="c_connect_back">
+    <visual>
+        <geometry>
+            <cylinder radius = "0.127" length = "0.0889"/>
+        </geometry>
+        <origin xyz = "0 0 0" rpy = "1.5708 0 0"/>
+    </visual>
+    <collision>
+        <geometry>
+            <cylinder radius = "0.127" length = "0.0889"/>
+        </geometry>
+    </collision>  
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+  </link>
+
+<joint name = "joint_c_back_connect" type = "fixed"> 
+  <parent link = "base_link"/>
+  <child link = "c_connect_back"/>
+  <origin xyz = "-0.3175 0 -0.0254"/>
+  <axis xyz = "0 1 0"/>
+</joint> 
+
+<joint name = "joint_c_back" type = "continuous"> 
+  <parent link = "c_connect_back"/>
+  <child link = "c_back"/>
+  <origin xyz = "0 0 0"/>
+  <axis xyz = "0 1 0"/>
+</joint>
+
 
 <joint name = "joint_c_front_2" type = "continuous">
-  <parent link = "base_link"/>
+  <parent link = "c_connect_front"/>
   <child link = "c_front_2"/>
   <origin xyz = "0 0 0"/>
   <axis xyz = "0 0 1"/>
 </joint>
 
-<joint name = "joint_c_back_2" type = "continuous">
-  <parent link = "base_link"/>
+<joint name = "joint_c_back_2" type = "continuous">   
+  <parent link = "c_connect_back"/>
   <child link = "c_back_2"/>
-  <origin xyz = "-0.05 0 0"/>
+  <origin xyz = "0 0 0"/>
   <axis xyz = "0 0 1"/>
 </joint>
 
@@ -215,6 +267,19 @@
     <axis xyz = "0 1 0"/>
 </joint>
 
+  <!-- This block connects the head_swivel joint to an actuator (motor), which informs both -->
+
+  <transmission name="front_joint_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="$front_joint_transmission">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="joint_c_front">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  
  <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       <robotNamespace>/</robotNamespace>

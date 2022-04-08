@@ -77,4 +77,4 @@ def rotate(speed, angle, clockwise):
 
 for i in range(5):
     move(4, 4, 1)
-    rotate(12, 144, 1)
+    rotate(144, 144, 1)

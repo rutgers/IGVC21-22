@@ -24,24 +24,29 @@ class ControllerReader():
         inputs = {}
         report = self.controller.read(64)
         if(report):
-            inputs['lb'] = bool(report[10] & 0x10)
-            inputs['rb'] = bool(report[10] & 0x20)
-            inputs['a'] = bool(report[10] & 0x1)
-            inputs['b'] = bool(report[10] & 0x2)
-            inputs['x'] = bool(report[10] & 0x8)
-            inputs['y'] = bool(report[10] & 0x4)
-            inputs['lthree'] = bool(report[11] & 0x1)
-            inputs['rthree'] = bool(report[11] & 0x2)
-            inputs['up'] = bool(report[11] & 0x4)
-            inputs['down'] = bool(report[11] & 0x14)
-            inputs['left'] = bool(report[11] & 0x1c)
-            inputs['right'] = bool(report[11] & 0xc)
-            inputs['zl'] = bool(report[9] & 0xff)  # something about this is wrong not sure what though
-            inputs['zr'] = bool(report[9] & 0x0)
-            inputs['secondY'] = int(report[7]) #fully up is 0, down is 255
-            inputs['secondX'] = int(report[5]) # fully left is 0, right is 255
-            inputs['firstY'] = int(report[3])
-            inputs['firstX'] = int(report[1])
+            # inputs['lb'] = bool(report[10] & 0x10)
+            # inputs['rb'] = bool(report[10] & 0x20)
+            # inputs['a'] = bool(report[10] & 0x1)
+            # inputs['b'] = bool(report[10] & 0x2)
+            # inputs['x'] = bool(report[10] & 0x8)
+            # inputs['y'] = bool(report[10] & 0x4)
+            # inputs['lthree'] = bool(report[11] & 0x1)
+            # inputs['rthree'] = bool(report[11] & 0x2)
+            # inputs['up'] = bool(report[11] & 0x4)
+            # inputs['down'] = bool(report[11] & 0x14)
+            # inputs['left'] = bool(report[11] & 0x1c)
+            # inputs['right'] = bool(report[11] & 0xc)
+            # inputs['zl'] = bool(report[9] & 0xff)  # something about this is wrong not sure what though
+            # inputs['zr'] = bool(report[9] & 0x0)
+            # inputs['secondY'] = int(report[7]) #fully up is 0, down is 255
+            # inputs['secondX'] = int(report[5]) # fully left is 0, right is 255
+            # inputs['firstY'] = int(report[3])
+            # inputs['firstX'] = int(report[1])
+
+            inputs['firstX'] = int(report[3])
+            inputs['firstY'] = int(report[4])
+            inputs['secondX'] = int(report[5])
+            inputs['secondY'] = int(report[6])
 
             return inputs
             # report [6] appears to also be secondY
@@ -61,7 +66,8 @@ def viewAllHid():
 if(__name__ == "__main__"):
     viewAllHid()
     
-    myDeviceName = "Controller (XBOX 360 For Windows)"
+    #myDeviceName = "Controller (XBOX 360 For Windows)"
+    myDeviceName = "Mayflash WiiU Pro Game Controller Adapter"
     myReader = ControllerReader()
     myReader.openController(myDeviceName)
 

@@ -2,7 +2,7 @@ from scipy.interpolate import interp1d
 import controllerInputs
 import time
 
-maxSpeed = 40 # find whatever the max speed of the motor is
+maxSpeed = 30 # find whatever the max speed of the motor is
 deadzone = 30 #maybe add ability for 2 seperate deadzones
 
 mapHigh = interp1d([(255/2)+deadzone,255], [0, maxSpeed])

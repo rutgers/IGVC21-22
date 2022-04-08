@@ -14,6 +14,8 @@ def init():
         print("not calibrated")
         pass 
 
+    print("setting defaults:")
+
     odrv0.axis0.motor.config.current_lim = 9.4
     odrv0.axis0.motor.config.pole_pairs = 3
     odrv0.axis0.motor.config.torque_constant = 0.05
@@ -39,9 +41,10 @@ if __name__ == "__main__":
     while(True):
         output = controlParse.mapControllsTwoStick(myReader.updateInputs())
         odrv0.axis0.controller.input_vel = output['leftMotorTargetSpeed']
-        odrv0.axis1.controller.input_vel = output['rightMotorTargetSpeed']
+        #odrv0.axis1.controller.input_vel = output['rightMotorTargetSpeed']
         print(output)
-        time.sleep(0.25)
+        time.sleep(0.1)
         
 
-    # note that maximum speed is set to 40 in controlParse.py
+    # note that maximum speed is set to 30 in controlParse.py
+    # 40 speed caused motor to draw more than the max set current

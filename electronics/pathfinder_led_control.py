@@ -13,7 +13,7 @@ if(platform.system() != "Linux"):
 	sys.exit("Linux only")
 
 while(True):
-	probable_port = glob.glob("/dev/ttyACM*")
+	probable_port = glob.glob("/dev/ttyUSB*")
 	if len(probable_port) > 0:
 		ser = serial.Serial(probable_port[0], 9600, timeout = 5)
 		print("Connected")

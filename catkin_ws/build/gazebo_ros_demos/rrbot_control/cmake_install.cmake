@@ -1,8 +1,8 @@
-# Install script for directory: /home/ieee/IGVC21-22/catkin_ws/src/gazebo_ros_demos/rrbot_control
+# Install script for directory: /home/rieee/IGVC21-22/catkin_ws/src/gazebo_ros_demos/rrbot_control
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ieee/IGVC21-22/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/rieee/IGVC21-22/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ieee/IGVC21-22/catkin_ws/build/gazebo_ros_demos/rrbot_control/catkin_generated/installspace/rrbot_control.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/rieee/IGVC21-22/catkin_ws/build/gazebo_ros_demos/rrbot_control/catkin_generated/installspace/rrbot_control.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rrbot_control/cmake" TYPE FILE FILES
-    "/home/ieee/IGVC21-22/catkin_ws/build/gazebo_ros_demos/rrbot_control/catkin_generated/installspace/rrbot_controlConfig.cmake"
-    "/home/ieee/IGVC21-22/catkin_ws/build/gazebo_ros_demos/rrbot_control/catkin_generated/installspace/rrbot_controlConfig-version.cmake"
+    "/home/rieee/IGVC21-22/catkin_ws/build/gazebo_ros_demos/rrbot_control/catkin_generated/installspace/rrbot_controlConfig.cmake"
+    "/home/rieee/IGVC21-22/catkin_ws/build/gazebo_ros_demos/rrbot_control/catkin_generated/installspace/rrbot_controlConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rrbot_control" TYPE FILE FILES "/home/ieee/IGVC21-22/catkin_ws/src/gazebo_ros_demos/rrbot_control/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rrbot_control" TYPE FILE FILES "/home/rieee/IGVC21-22/catkin_ws/src/gazebo_ros_demos/rrbot_control/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rrbot_control" TYPE DIRECTORY FILES "/home/ieee/IGVC21-22/catkin_ws/src/gazebo_ros_demos/rrbot_control/config")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rrbot_control" TYPE DIRECTORY FILES "/home/rieee/IGVC21-22/catkin_ws/src/gazebo_ros_demos/rrbot_control/config")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rrbot_control" TYPE DIRECTORY FILES "/home/ieee/IGVC21-22/catkin_ws/src/gazebo_ros_demos/rrbot_control/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rrbot_control" TYPE DIRECTORY FILES "/home/rieee/IGVC21-22/catkin_ws/src/gazebo_ros_demos/rrbot_control/launch")
 endif()
 

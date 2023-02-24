@@ -67,14 +67,14 @@ set(rrbot_description_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(rrbot_description_SOURCE_PREFIX /home/ieee/IGVC21-22/catkin_ws/src/gazebo_ros_demos/rrbot_description)
-  set(rrbot_description_DEVEL_PREFIX /home/ieee/IGVC21-22/catkin_ws/devel)
+  set(rrbot_description_SOURCE_PREFIX /home/rieee/IGVC21-22/catkin_ws/src/gazebo_ros_demos/rrbot_description)
+  set(rrbot_description_DEVEL_PREFIX /home/rieee/IGVC21-22/catkin_ws/devel)
   set(rrbot_description_INSTALL_PREFIX "")
   set(rrbot_description_PREFIX ${rrbot_description_DEVEL_PREFIX})
 else()
   set(rrbot_description_SOURCE_PREFIX "")
   set(rrbot_description_DEVEL_PREFIX "")
-  set(rrbot_description_INSTALL_PREFIX /home/ieee/IGVC21-22/catkin_ws/install)
+  set(rrbot_description_INSTALL_PREFIX /home/rieee/IGVC21-22/catkin_ws/install)
   set(rrbot_description_PREFIX ${rrbot_description_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ieee/IGVC21-22/catkin_ws/install/lib;/home/ieee/catkin_ws/devel/lib;/home/ieee/n2e_nav_lecture/catkin_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/rieee/IGVC21-22/catkin_ws/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

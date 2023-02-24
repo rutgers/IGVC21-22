@@ -1,4 +1,4 @@
-prefix=/home/ieee/IGVC21-22/catkin_ws/devel
+prefix=/home/rieee/IGVC21-22/catkin_ws/devel
 
 Name: rrbot_gazebo
 Description: Description of rrbot_gazebo

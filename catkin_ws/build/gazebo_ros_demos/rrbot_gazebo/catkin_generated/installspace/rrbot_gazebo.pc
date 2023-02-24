@@ -1,4 +1,4 @@
-prefix=/home/ieee/IGVC21-22/catkin_ws/install
+prefix=/home/rieee/IGVC21-22/catkin_ws/install
 
 Name: rrbot_gazebo
 Description: Description of rrbot_gazebo

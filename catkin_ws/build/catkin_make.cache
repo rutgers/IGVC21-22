@@ -1,2 +1,2 @@
 gazebo_ros_demos/gazebo_tutorials:gazebo_ros_demos/rrbot_control:gazebo_ros_demos/rrbot_description:gazebo_ros_demos/rrbot_gazebo:urdf_testing
--DCATKIN_DEVEL_PREFIX=/home/ieee/IGVC21-22/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ieee/IGVC21-22/catkin_ws/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/rieee/IGVC21-22/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/rieee/IGVC21-22/catkin_ws/install -G Unix Makefiles

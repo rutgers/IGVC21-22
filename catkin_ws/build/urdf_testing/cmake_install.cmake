@@ -1,8 +1,8 @@
-# Install script for directory: /home/ieee/IGVC21-22/catkin_ws/src/urdf_testing
+# Install script for directory: /home/rieee/IGVC21-22/catkin_ws/src/urdf_testing
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ieee/IGVC21-22/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/rieee/IGVC21-22/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ieee/IGVC21-22/catkin_ws/build/urdf_testing/catkin_generated/installspace/urdf_testing.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/rieee/IGVC21-22/catkin_ws/build/urdf_testing/catkin_generated/installspace/urdf_testing.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/urdf_testing/cmake" TYPE FILE FILES
-    "/home/ieee/IGVC21-22/catkin_ws/build/urdf_testing/catkin_generated/installspace/urdf_testingConfig.cmake"
-    "/home/ieee/IGVC21-22/catkin_ws/build/urdf_testing/catkin_generated/installspace/urdf_testingConfig-version.cmake"
+    "/home/rieee/IGVC21-22/catkin_ws/build/urdf_testing/catkin_generated/installspace/urdf_testingConfig.cmake"
+    "/home/rieee/IGVC21-22/catkin_ws/build/urdf_testing/catkin_generated/installspace/urdf_testingConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/urdf_testing" TYPE FILE FILES "/home/ieee/IGVC21-22/catkin_ws/src/urdf_testing/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/urdf_testing" TYPE FILE FILES "/home/rieee/IGVC21-22/catkin_ws/src/urdf_testing/package.xml")
 endif()
 

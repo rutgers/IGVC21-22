@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ieee/IGVC21-22/catkin_ws/devel/lib/libgazebo_tutorials.pdb"
-  "/home/ieee/IGVC21-22/catkin_ws/devel/lib/libgazebo_tutorials.so"
+  "/home/rieee/IGVC21-22/catkin_ws/devel/lib/libgazebo_tutorials.pdb"
+  "/home/rieee/IGVC21-22/catkin_ws/devel/lib/libgazebo_tutorials.so"
   "CMakeFiles/gazebo_tutorials.dir/src/simple_world_plugin.cpp.o"
 )
 

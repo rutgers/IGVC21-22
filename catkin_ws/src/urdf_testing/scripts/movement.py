@@ -6,7 +6,7 @@ PI = 3.1415926535897
 
 def move(speed, distance, isForward):#0,1
     rospy.init_node('robot_cleaner', anonymous=True)
-    velocity_publisher = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
+    velocity_publisher = rospy.Publisher('/r2d2_diff_drive_controller/cmd_vel', Twist, queue_size=10)
     vel_msg = Twist()
 
     print("Let's move your robot: ")
